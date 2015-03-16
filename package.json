@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/podio/istanbul-react/issues"
   },
-  "homepage": "https://github.com/podio/istanbul-react"
+  "homepage": "https://github.com/podio/istanbul-react",
+  "dependencies": {
+    "react-tools": "^0.13.0",
+    "esprima": "^2.1.0"
+  }
 }
