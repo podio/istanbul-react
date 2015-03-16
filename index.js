@@ -28,4 +28,6 @@ Instrumenter.prototype.instrument = function (content, file, callback) {
   }
 };
 
-module.exports = Instrumenter;
+module.exports = {
+  Instrumenter: Instrumenter
+};
