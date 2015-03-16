@@ -22,7 +22,7 @@ Instrumenter.prototype.instrument = function (content, file, callback) {
   });
 
   try {
-    callback(void 0, instrumenter.instrumentASTSync(program, file, content));
+    callback(void 0, this.instrumentASTSync(program, file, content));
   } catch (exception) {
     callback(exception);
   }
