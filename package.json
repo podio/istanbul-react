@@ -1,0 +1,27 @@
+{
+  "name": "istanbul-react",
+  "version": "1.0.0",
+  "description": "Instrumenter for 1:1 mapping of React JSX components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/podio/istanbul-react.git"
+  },
+  "keywords": [
+    "istanbul",
+    "react",
+    "jsx",
+    "instrumenter",
+    "source",
+    "map"
+  ],
+  "author": "Søren Brokær <rasmussen@podio.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/podio/istanbul-react/issues"
+  },
+  "homepage": "https://github.com/podio/istanbul-react"
+}
