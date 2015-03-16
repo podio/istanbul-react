@@ -12,8 +12,6 @@ function Instrumenter(opt){
 util.inherits(Instrumenter, istanbul.Instrumenter);
 
 Instrumenter.prototype.instrument = function (content, file, callback) {
-  var jsPath = file.originalPath.replace(basePath + '/', './');
-
   var transformed = reactTools.transformWithDetails(content, {
     sourceMap: true,
     harmony: true
@@ -24,7 +22,7 @@ Instrumenter.prototype.instrument = function (content, file, callback) {
   });
 
   try {
-    callback(void 0, instrumenter.instrumentASTSync(program, jsPath, content));
+    callback(void 0, instrumenter.instrumentASTSync(program, file, content));
   } catch (exception) {
     callback(exception);
   }
