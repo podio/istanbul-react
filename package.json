@@ -1,6 +1,6 @@
 {
   "name": "istanbul-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Instrumenter for 1:1 mapping of React JSX components",
   "main": "index.js",
   "scripts": {
