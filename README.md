@@ -31,6 +31,12 @@ instrumenter.instrument(content, path, function(err, instrumentedCode) {
 });
 ```
 
+# Tests
+
+```sh
+$ npm test
+```
+
 # License
 
 [MIT](LICENSE)
