@@ -13,7 +13,7 @@ function Instrumenter(opt){
 
 util.inherits(Instrumenter, istanbul.Instrumenter);
 
-Instrumenter.prototype.instrument = function (content, file, callback) {
+Instrumenter.prototype._transform = function (content) {
   var transformed = reactTools.transformWithDetails(content, {
     sourceMap: true,
     harmony: true
@@ -23,11 +23,23 @@ Instrumenter.prototype.instrument = function (content, file, callback) {
     loc: true
   });
 
+  return program;
+};
+
+Instrumenter.prototype.instrument = function (code, filename, callback) {
+  var program = this._transform(code);
+
   try {
-    callback(void 0, this.instrumentASTSync(program, file, content));
+    callback(void 0, this.instrumentASTSync(program, filename, code));
   } catch (exception) {
     callback(exception);
   }
+};
+
+Instrumenter.prototype.instrumentSync = function (code, filename) {
+  var program = this._transform(code);
+
+  return this.instrumentASTSync(program, filename, code);
 };
 
 module.exports = {

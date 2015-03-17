@@ -49,4 +49,15 @@ describe('istanbul-react', function(){
       done();
     }
   });
+
+  it('should instrument sync es6 jsx', function() {
+    var path = 'fixtures/react-es5.jsx';
+
+    var jsx = fs.readFileSync(path, {encoding:'utf8'});
+
+    var instrumenter = new Instrumenter();
+    var instrumentedCode = instrumenter.instrumentSync(jsx, path);
+
+    assert.equal(instrumentedCode, "\nvar __cov_TEhtOrl3pQbzvDff90Xx4g = (Function('return this'))();\nif (!__cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__) { __cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__ = {}; }\n__cov_TEhtOrl3pQbzvDff90Xx4g = __cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__;\nif (!(__cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'])) {\n   __cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'] = {\"path\":\"fixtures/react-es5.jsx\",\"s\":{\"1\":0,\"2\":0},\"b\":{},\"f\":{\"1\":0},\"fnMap\":{\"1\":{\"name\":\"(anonymous_1)\",\"line\":2,\"loc\":{\"start\":{\"line\":2,\"column\":10},\"end\":{\"line\":2,\"column\":21}}}},\"statementMap\":{\"1\":{\"start\":{\"line\":1,\"column\":-15},\"end\":{\"line\":5,\"column\":3}},\"2\":{\"start\":{\"line\":3,\"column\":4},\"end\":{\"line\":3,\"column\":71}}},\"branchMap\":{}};\n}\n__cov_TEhtOrl3pQbzvDff90Xx4g = __cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'];\n__cov_TEhtOrl3pQbzvDff90Xx4g.s['1']++;var HelloMessage=React.createClass({displayName:'HelloMessage',render:function(){__cov_TEhtOrl3pQbzvDff90Xx4g.f['1']++;__cov_TEhtOrl3pQbzvDff90Xx4g.s['2']++;return React.createElement('div',null,'Hello ',this.props.name);}});\n");
+  });
 });
