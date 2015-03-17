@@ -1,10 +1,10 @@
 # istanbul-react [![Build Status](http://img.shields.io/travis/podio/istanbul-react.svg?style=flat-square)](https://travis-ci.org/podio/istanbul-react) [![Dependency Status](http://img.shields.io/gemnasium/podio/istanbul-react.svg?style=flat-square)](https://gemnasium.com/podio/istanbul-react)
-> Instrumenter for 1:1 mapping of React JSX components. Can be used with [karma-coverage](https://github.com/karma-runner/karma-coverage)
+> Instrumenter for 1:1 mapping of React JSX components, can be used with [karma-coverage](https://github.com/karma-runner/karma-coverage)
 
 ## Install
 
 ```sh
-$ npm install --save istanbul-react
+$ npm install --save-dev istanbul-react
 ```
 
 ## Usage
@@ -39,4 +39,4 @@ $ npm test
 
 ## License
 
-[MIT](LICENSE)
+MIT © [Podio](https://podio.com)
