@@ -1,0 +1,9 @@
+
+var __cov_TEhtOrl3pQbzvDff90Xx4g = (Function('return this'))();
+if (!__cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__) { __cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__ = {}; }
+__cov_TEhtOrl3pQbzvDff90Xx4g = __cov_TEhtOrl3pQbzvDff90Xx4g.__coverage__;
+if (!(__cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'])) {
+   __cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'] = {"path":"fixtures/react-es5.jsx","s":{"1":0,"2":0},"b":{},"f":{"1":0},"fnMap":{"1":{"name":"(anonymous_1)","line":2,"loc":{"start":{"line":2,"column":10},"end":{"line":2,"column":21}}}},"statementMap":{"1":{"start":{"line":1,"column":-15},"end":{"line":5,"column":3}},"2":{"start":{"line":3,"column":4},"end":{"line":3,"column":71}}},"branchMap":{}};
+}
+__cov_TEhtOrl3pQbzvDff90Xx4g = __cov_TEhtOrl3pQbzvDff90Xx4g['fixtures/react-es5.jsx'];
+__cov_TEhtOrl3pQbzvDff90Xx4g.s['1']++;var HelloMessage=React.createClass({displayName:'HelloMessage',render:function(){__cov_TEhtOrl3pQbzvDff90Xx4g.f['1']++;__cov_TEhtOrl3pQbzvDff90Xx4g.s['2']++;return React.createElement('div',null,'Hello ',this.props.name);}});
