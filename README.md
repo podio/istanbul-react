@@ -3,3 +3,6 @@
 
 [![Dependency Status](http://img.shields.io/gemnasium/podio/istanbul-react.svg?style=flat-square)](https://gemnasium.com/podio/istanbul-react)
 
+# License
+
+[MIT](LICENSE)
