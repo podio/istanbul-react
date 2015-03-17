@@ -18,7 +18,7 @@
     "source",
     "map"
   ],
-  "author": "Søren Brokær <rasmussen@podio.com>",
+  "author": "Søren Brokær <rasmussen@podio.com> (http://podio.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/podio/istanbul-react/issues"
