@@ -8,6 +8,7 @@ var esprima = require('esprima');
 var reactTools = require('react-tools');
 
 function Instrumenter(opt){
+  this.opt = opt || {};
   istanbul.Instrumenter.call(this, opt);
 }
 
@@ -26,7 +27,21 @@ Instrumenter.prototype._transform = function (content) {
   return program;
 };
 
+Instrumenter.prototype._modifyBeforeInstrumentBasedOnOptions = function (params) {
+  var modifyCodeBeforeInstrumentation = this.opt.modifyCodeBeforeInstrumentation;
+  var code = params.code;
+  if (modifyCodeBeforeInstrumentation) {
+    code = modifyCodeBeforeInstrumentation(params);
+  }
+
+  return code;
+};
+
 Instrumenter.prototype.instrument = function (code, filename, callback) {
+  code = this._modifyBeforeInstrumentBasedOnOptions({
+    code: code,
+    filename: filename
+  });
   var program = this._transform(code);
 
   try {
@@ -37,6 +52,10 @@ Instrumenter.prototype.instrument = function (code, filename, callback) {
 };
 
 Instrumenter.prototype.instrumentSync = function (code, filename) {
+  code = this._modifyBeforeInstrumentBasedOnOptions({
+    code: code,
+    filename: filename
+  });
   var program = this._transform(code);
 
   return this.instrumentASTSync(program, filename, code);

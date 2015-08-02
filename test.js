@@ -63,4 +63,25 @@ describe('istanbul-react', function(){
 
     assert.equal(instrumentedCode, instrumented);
   });
+
+  it('should modify code using options callback', function() {
+    var code = [
+      '"use strict";',
+      'var a = 10;'
+    ].join('\n');
+    var modifiedCode = [
+      ';"use strict";',
+      'var a = 10;'
+    ].join('\n');
+    var instrumenter = new Instrumenter({
+      modifyCodeBeforeInstrumentation: function modifyCodeBeforeInstrumentation(params) {
+        return params.code.replace(/(['"]use strict['"];)/g, ';$1');
+      }
+    });
+    var result = instrumenter._modifyBeforeInstrumentBasedOnOptions({
+      code: code,
+      filename: ''
+    });
+    assert.equal(modifiedCode, result);
+  });
 });
