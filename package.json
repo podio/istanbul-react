@@ -30,6 +30,7 @@
     "istanbul": "^0.3.8"
   },
   "devDependencies": {
+    "eol": "^0.2.0",
     "mocha": "^2.2.1"
   }
 }
