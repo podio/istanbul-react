@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var assert = require('assert');
+var eol = require('eol');
 
 var Instrumenter = require('./').Instrumenter;
 
@@ -15,7 +16,7 @@ describe('istanbul-react', function(){
     var instrumenter = new Instrumenter();
     instrumenter.instrument(jsx, path, function (err, instrumentedCode) {
       assert.equal(err, void 0);
-      assert.equal(instrumentedCode, instrumented);
+      assert.equal(eol.auto(instrumentedCode), eol.auto(instrumented));
 
       done();
     })
@@ -30,7 +31,7 @@ describe('istanbul-react', function(){
     var instrumenter = new Instrumenter();
     instrumenter.instrument(jsx, path, function (err, instrumentedCode) {
       assert.equal(err, void 0);
-      assert.equal(instrumentedCode, instrumented);
+      assert.equal(eol.auto(instrumentedCode), eol.auto(instrumented));
 
       done();
     })
@@ -61,6 +62,6 @@ describe('istanbul-react', function(){
     var instrumenter = new Instrumenter();
     var instrumentedCode = instrumenter.instrumentSync(jsx, path);
 
-    assert.equal(instrumentedCode, instrumented);
+    assert.equal(eol.auto(instrumentedCode), eol.auto(instrumented));
   });
 });
