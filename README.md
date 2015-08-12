@@ -13,7 +13,7 @@ Use with [karma-coverage](https://github.com/karma-runner/karma-coverage#instrum
 
 ```js
 coverageReporter: {
-  instrumenters: { 'istanbul-react' : require('istanbul-react') }
+  instrumenters: { 'istanbul-react' : require('istanbul-react') },
   instrumenter: {
     '**/*.jsx': 'istanbul-react'
   },
